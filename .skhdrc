@@ -1,0 +1,48 @@
+# change focus
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+# (alt) change focus (using arrow keys)
+
+# alt - right : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m window --focus stack.next || yabai -m window --focus stack.first); else yabai -m window --focus next || yabai -m window --focus first; fi
+# alt - left : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m window --focus stack.prev || yabai -m window --focus stack.last); else yabai -m window --focus prev || yabai -m window --focus last; fi
+alt - right : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+alt - left : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+# shift window in current workspace
+alt + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+alt + shift - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+alt + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+alt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+# alternatively, use the arrow keys
+alt + shift - left : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+alt + shift - down : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+alt + shift - up : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+alt + shift - right : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+#alt + shift - 0 : yabai -m window --space 10
+alt - e : yabai -m space --layout bsp
+alt - l : yabai -m space --layout float
+alt - s : yabai -m space --layout stack
+
+
+# move focused window to next/prev workspace
+alt + shift - 1 : yabai -m window --space 1
+alt + shift - 2 : yabai -m window --space 2
+alt + shift - 3 : yabai -m window --space 3
+alt + shift - 4 : yabai -m window --space 4
+alt + shift - 5 : yabai -m window --space 5
+alt + shift - 6 : yabai -m window --space 6
+alt + shift - 7 : yabai -m window --space 7
+alt + shift - 8 : yabai -m window --space 8
+alt + shift - 9 : yabai -m window --space 9
+#alt + shift - 0 : yabai -m window --space 10
+
+
+alt + shift - q : yabai -m window --close
+
+alt - e : yabai -m space --layout bsp
+alt - f : yabai -m space --layout float
+alt - w : yabai -m space --layout stack
+
+alt - return : open -na /Applications/kitty.app/Contents/MacOS/kitty
+
