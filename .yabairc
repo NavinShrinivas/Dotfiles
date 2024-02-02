@@ -74,4 +74,5 @@ yabai -m rule --add title='Settings$' manage=off
 
 
 
-echo "yabai configuration loaded..testing"
+echo "yabai configuration loaded.."
+
