@@ -1,0 +1,3 @@
+uri = "https://localhost"
+verify_ca = false
+verify_hostnames = false
