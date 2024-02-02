@@ -74,8 +74,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-autosuggestions
-  dogesay
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -117,3 +115,4 @@ eval "$(pyenv init -)"
 
 export PATH=$PATH:$HOME/.ghcup/bin
 export PATH="$PATH:/usr/bin/RustRover-233.8264.22/bin/"
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
