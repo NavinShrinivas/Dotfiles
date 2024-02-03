@@ -116,3 +116,4 @@ eval "$(pyenv init -)"
 export PATH=$PATH:$HOME/.ghcup/bin
 export PATH="$PATH:/usr/bin/RustRover-233.8264.22/bin/"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+alias e=nvim
