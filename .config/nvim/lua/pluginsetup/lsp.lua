@@ -7,6 +7,34 @@
 -- })
 -- maoson, handles all the server installs and setups!
 local lspconfig = require('lspconfig')
+
+require("lspsaga").setup({
+   lightbulb = {
+      sign = false,
+   }
+})
+
+-- For virtual text diagnostics  :
+vim.diagnostic.config({
+  virtual_text = {
+    source = "always",  -- Or "if_many"
+    prefix = '●', -- Could be '■', '▎', 'x'
+  },
+  severity_sort = true,
+  float = {
+    source = "always",  -- Or "if_many"
+  },
+})
+
+-- For floating diagnostic messages : 
+-- vim.o.updatetime = 550
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
+--   callback = function ()
+--     vim.diagnostic.open_float(nil, {focus=false})
+--   end
+-- })
+
 require('mason-lspconfig').setup_handlers({
    function(server)
       lspconfig[server].setup({})
@@ -22,29 +50,31 @@ require("mason").setup({
    }
 })
 
-
 require("mason").setup()
 require("mason-lspconfig").setup()
 local lsp_defaults = lspconfig.util.default_config
 lsp_defaults.capabilities = vim.tbl_deep_extend('force', lsp_defaults.capabilities,
    require('cmp_nvim_lsp').default_capabilities())
 
-require("navigator").setup({
-   transparency = 100,
-   mason = true,
-   default_mapping = false,
-})
-local signs = {
-   Error = " ",
-   Warning = " ",
-   Hint = " ",
-   Information = " "
-}
+-- require("trouble").setup()
+-- require("navigator").setup({
+--    transparency = 100,
+--    mason = true,
+--    default_mapping = false,
+-- })
+-- local signs = {
+--    Error = " ",
+--    Warning = " ",
+--    Hint = " ",
+--    Information = " "
+-- }
+--
+-- for type, icon in pairs(signs) do
+--    local hl = "DiagnosticSign" .. type
+--    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+-- end
 
-for type, icon in pairs(signs) do
-   local hl = "DiagnosticSign" .. type
-   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+
 -- Getting nvim to use fzf for its lsp functions :
 vim.lsp.handlers["textDocument/codeAction"] = require('navigator.codeAction').code_action
 vim.lsp.handlers["textDocument/definition"] = require('navigator.definition').definition_handler()

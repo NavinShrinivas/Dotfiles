@@ -1,5 +1,6 @@
--- Personal keybinds
+-- Personal Custom keybinds, thses might change default behaviour of vim keys
 vim.keymap.set("n", "<C-f>", "<C-c>")
+vim.keymap.set('v', "<leader>p", "\"_dP", { noremap = true, silent = true })
 
 -- nerdtree keybinds
 vim.keymap.set('n', '<leader>n', ":NeoTreeShowToggle<cr>")
@@ -32,7 +33,8 @@ vim.keymap.set('v', "<leader>cc", "<esc><cmd>lua require('Comment.api').toggle.l
 vim.keymap.set('n', "<leader>lr", "<esc><cmd>lua vim.lsp.buf.references()<CR>")
 vim.keymap.set('n', "<leader>la", "<esc><cmd>lua require('navigator.codeAction').code_action()<CR>")
 vim.keymap.set('n', "<leader>lf", "<esc><cmd>lua vim.lsp.buf.format()<CR>")
-vim.keymap.set('n', "<leader>ld", "<esc><cmd>lua vim.lsp.buf.definition()<CR>")
+vim.keymap.set('n', "<leader>lF", "<esc><cmd>lua vim.lsp.diagnostic()<CR>")
+vim.keymap.set('n', "<leader>ld", "<esc><cmd>lua vim.lsp.buf.declaration()<CR>")
 vim.keymap.set('n', "<leader>lp", "<esc><cmd>lua require('navigator.definition').definition_preview()<CR>")
 vim.keymap.set('n', "<leader>ls", "<esc><cmd>lua vim.lsp.buf.document_symbol()<CR>")
 vim.keymap.set('n', "<leader>lS", "<esc><cmd>lua vim.lsp.buf.signature_help()<CR>")
@@ -48,6 +50,6 @@ vim.keymap.set("n", "<leader>lgb", "<esc><cmd>:LazyGitFilterCurrentFile<CR>")
 vim.keymap.set("n", "<leader>m", "<esc><cmd>:lua require('harpoon.mark').add_file()<CR>")
 vim.keymap.set("n", "<leader>h", "<esc><cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>")
 vim.keymap.set("n", "<leader>hh", "<esc><cmd>:lua require('harpoon.ui').nav_file(1)<CR>") -- opens first mark in list
-vim.keymap.set("n", "<leader>hj", "<esc><cmd>:lua require('harpoon.ui').nav_file(2)<CR>") -- opens first mark in list
-vim.keymap.set("n", "<leader>hk", "<esc><cmd>:lua require('harpoon.ui').nav_file(3)<CR>") -- opens first mark in list
-vim.keymap.set("n", "<leader>hl", "<esc><cmd>:lua require('harpoon.ui').nav_file(4)<CR>") -- opens first mark in list
+vim.keymap.set("n", "<leader>hj", "<esc><cmd>:lua require('harpoon.ui').nav_file(2)<CR>") -- opens second mark in list
+vim.keymap.set("n", "<leader>hk", "<esc><cmd>:lua require('harpoon.ui').nav_file(3)<CR>") -- opens thrid mark in list
+vim.keymap.set("n", "<leader>hl", "<esc><cmd>:lua require('harpoon.ui').nav_file(4)<CR>") -- opens fouth mark in list

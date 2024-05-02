@@ -35,3 +35,4 @@ require('nvim-autopairs').enable()
 require('cmp_nvim_lsp').setup()
 -- require('nvim-lightbulb').setup({ autocmd = { enabled = true } })
 require "fidget".setup {}
+require("ibl").setup()

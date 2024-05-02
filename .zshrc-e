@@ -120,5 +120,3 @@ alias e=nvim
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 export PATH="~/.local/man:$PATH"
-
-[ -f "/Users/navinshrinivas/.ghcup/env" ] && . "/Users/navinshrinivas/.ghcup/env" # ghcup-env

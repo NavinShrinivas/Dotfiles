@@ -1,45 +1,21 @@
 return require('packer').startup(function(use)
-   use({
-      'nvimdev/lspsaga.nvim',
-      after = 'nvim-lspconfig',
-      config = function()
-         require('lspsaga').setup({
-            symbol_in_winbar = {
-               enable = true,
-               show_file = true,
-               separator = "  ",
-               color_mode = false,
-            },
-         })
-      end,
-   })
    use 'wbthomason/packer.nvim'
    use 'NavinShrinivas/PupBin'
    -- Apperance :
    use { 'nyoom-engineering/oxocarbon.nvim' }
+   use("oxfist/night-owl.nvim")
    use 'folke/tokyonight.nvim'
    use 'ayu-theme/ayu-vim'
    use 'KabbAmine/yowish.vim'
-   -- use 'ryanoasis/vim-devicons'
    use 'nvim-tree/nvim-web-devicons'
-   -- use 'onsails/lspkind.nvim'
    use 'nvim-lualine/lualine.nvim' -- Statusline, done
    use {
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
    }
-   -- use "folke/trouble.nvim"
-   -- use 'folke/lsp-colors.nvim'
-   -- use({
-   --    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-   --    config = function()
-   --       require("lsp_lines").setup()
-   --    end,
-   -- })
 
    -- LSP stuff
    use({
-      -- 'ray-x/navigator.lua',
       'ray-x/navigator.lua',
       requires = { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
    })
@@ -53,8 +29,8 @@ return require('packer').startup(function(use)
    use { "L3MON4D3/LuaSnip" }
    use { "jose-elias-alvarez/null-ls.nvim" }
    use 'neovim/nvim-lspconfig'    -- Configurations for Nvim LSP
-   -- use { "ray-x/lsp_signature.nvim" } --Done
    use "simrat39/rust-tools.nvim" -- Done, default config
+   use { 'nvimdev/lspsaga.nvim' }
 
    -- UI utils
    -- use({
@@ -63,6 +39,18 @@ return require('packer').startup(function(use)
    --       require("lsp_lines").setup()
    --    end,
    -- })
+   use "lukas-reineke/indent-blankline.nvim"
+   use({
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+         require("trouble").setup({
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+         })
+      end,
+   })
    use { 'romgrk/barbar.nvim', wants = 'nvim-web-devicons' } -- Done
    use "rebelot/kanagawa.nvim"                               -- No setup, usage in theme.lua
    use 'AlexvZyl/nordic.nvim'                                -- No setup, usage in theme.lua
@@ -106,8 +94,6 @@ return require('packer').startup(function(use)
       requires = { 'MunifTanjim/nui.nvim', "nvim-lua/plenary.nvim" }
    }
    -- debuggers :
-   use 'mfussenegger/nvim-dap'
-   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
    if install_plugins then
       require('packer').sync()
