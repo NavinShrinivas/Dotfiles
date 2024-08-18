@@ -1,0 +1,62 @@
+
+
+theme:
+  light: true
+  background-color: 220 23 95
+  contrast-multiplier: 1.0
+  primary-color: 220 91 54
+  positive-color: 109 58 40
+  negative-color: 347 87 44
+
+pages:
+  - name: Focused
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+
+          - type: rss
+            limit: 15
+            collapse-after: 3
+            cache: 1h
+            feeds:
+              - url: https://lobste.rs/rss
+                title: Lobsters
+
+
+      - size: full
+        widgets:
+          - type: hacker-news
+
+
+
+          - type: videos
+            channels:
+              - UC_b1GUJv_2QiMP4BxC9-Dxg #Arpit Bhayani 
+              - UCsXVk37bltHxD1rDPwtNM8Q #Kruzgezagt 
+              - UCsBjURrPoezykLs9EqgamOA #Fireship
+              - UC9-y-6csu5WGm29I7JiwpnA #Computerphile
+              - UC8ENHE5xdFSwx71u3fDH5Xw #Primeagean
+              - UCHnyfMqiRRG1u-2MsSQLbXA #Veritasium
+
+          - type: rss
+            limit: 15
+            collapse-after: 3
+            cache: 1h
+            feeds:
+              - url: https://www.uber.com/en-IN/blog/engineering/rss/
+                title: Uber
+
+
+      - size: small
+        widgets:
+          - type: weather
+            units: metric
+            location: Bengaluru, India 
+
+  - name: Wide
+    columns:
+      - size: full 
+        widgets: 
+          - type: reddit
+            subreddit: selfhosted

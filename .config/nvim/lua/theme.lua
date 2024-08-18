@@ -18,7 +18,7 @@ require('kanagawa').setup({
 })
 vim.cmd("set encoding=utf8")
 vim.opt.background = "dark"
--- vim.cmd("colorscheme oxocarbon")
+vim.cmd("colorscheme oxocarbon")
 require("tokyonight").setup({
    -- your configuration comes here
    -- or leave it empty to use the default settings
@@ -54,4 +54,4 @@ require("tokyonight").setup({
    ---@param colors ColorScheme
    on_highlights = function(highlights, colors) end,
 })
-vim.cmd("colorscheme night-owl")
+-- vim.cmd("colorscheme night-owl")

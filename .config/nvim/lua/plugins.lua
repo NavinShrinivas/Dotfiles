@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
    use 'neovim/nvim-lspconfig'    -- Configurations for Nvim LSP
    use "simrat39/rust-tools.nvim" -- Done, default config
    use { 'nvimdev/lspsaga.nvim' }
+   -- use 'mfussenegger/nvim-lint' -- Linter, parent level config only
 
    -- UI utils
    -- use({

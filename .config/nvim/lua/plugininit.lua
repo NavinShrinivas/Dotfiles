@@ -36,3 +36,16 @@ require('cmp_nvim_lsp').setup()
 -- require('nvim-lightbulb').setup({ autocmd = { enabled = true } })
 require "fidget".setup {}
 require("ibl").setup()
+
+-- linter when there is no language server
+-- require('lint').linters_by_ft = {
+--   markdown = {'vale',}
+-- }
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+--   callback = function()
+--
+--     -- try_lint without arguments runs the linters defined in `linters_by_ft`
+--     -- for the current filetype
+--     require("lint").try_lint()
+--   end,
+-- })
