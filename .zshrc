@@ -124,5 +124,5 @@ export PATH="~/.local/man:$PATH"
 [ -f "/Users/navinshrinivas/.ghcup/env" ] && . "/Users/navinshrinivas/.ghcup/env" # ghcup-env
 
 # vale sync ~/ ## For gettung vale linter to work right
-cowsay "Drink water and kickass!"
+cowsay "Drink water and kickass! It is `date`"
 fortune
